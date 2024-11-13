@@ -10,6 +10,7 @@ public class Ejer1 {
 		// Variable para el tamaño del array
 		int t;
 		// Variable del Array
+		int tabla[];
 
 		// Creamos el Scanner
 		Scanner reader = new Scanner(System.in);
@@ -23,7 +24,7 @@ public class Ejer1 {
 		v = reader.nextInt();
 
 		// Creamos la tabla tamano con el valor introducido por el usuario
-		int tabla[] = new int[t];
+		tabla = new int[t];
 		
 		// La inicializamos con el valor introducido por el usuario
 		Arrays.fill(tabla, v);
