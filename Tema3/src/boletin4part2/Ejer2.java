@@ -7,7 +7,7 @@ public class Ejer2 {
 		// Creamos la tabla que vamos a transponer
 		int tabla[][] = {{1,2,3},{4,5,6},{7,8,9}};
 		// Variable para almacenar la tabla transpuesta
-		int transpuesta[][] = new int[0][0];
+		int transpuesta[][];
 		
 		
 		// Imprimimos la tabla sin transponer
