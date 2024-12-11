@@ -22,12 +22,12 @@ public class Ejer2Avanzado {
 		System.out.println("Jugador 1, introduzca la contraseña: ");
 		contraseña = reader.nextLine();
 
+		// Pedimos al jugador 2 la contraseña y la guardamos en la variable
+		System.out.println("Jugador 2, intente adivinar la contraseña: ");
+		intento = reader.nextLine();
+		
 		// Bucle que pide contraseña hasta que se adivina
-		while (!intento.equals(contraseña)) {
-			// Pedimos al jugador 2 la contraseña y la guardamos en la variable
-			System.out.println("Jugador 2, intente adivinar la contraseña: ");
-			intento = reader.nextLine();
-			
+		while (!intento.equals(contraseña)) {	
 			// Inicializados a cadena vacía la pista
 			pista = "";
 			
@@ -44,14 +44,17 @@ public class Ejer2Avanzado {
 				}
 			}
 			
-			// Si adivina imprime Ganaste, si no muestra la pista
-			if (intento.equals(contraseña)) {
-				System.out.println("Ganaste, era " + intento);
-			} else {
-				System.out.println(pista);
-			}
+			// muestra la pista
+			System.out.println(pista);
+			
+			// Pedimos al jugador 2 la contraseña y la guardamos en la variable
+			System.out.println("Jugador 2, intente adivinar la contraseña: ");
+			intento = reader.nextLine();
 		}
 
+		// Imprimimos que ganó
+		System.out.println("Enhorabuena, ganaste");
+		
 		// Cerramos el Scanner
 		reader.close();
 	}

@@ -17,15 +17,17 @@ public class Ejer2 {
 		// Pedimos al jugador 1 la contraseña y la guardamos en la variable
 		System.out.println("Jugador 1, introduzca la contraseña: ");
 		contraseña = reader.nextLine();
-
+		
+		// Pedimos al jugador 2 la contraseña y la guardamos en la variable
+		System.out.println("Jugador 2, intente adivinar la contraseña: ");
+		intento = reader.nextLine();
+		
 		// Bucle que pide contraseña hasta que se adivina
 		while (!intento.equals(contraseña)) {
-			// Pedimos al jugador 2 la contraseña y la guardamos en la variable
-			System.out.println("Jugador 2, intente adivinar la contraseña: ");
-			intento = reader.nextLine();
 
 			// Guardamos en alfabeto la posicion en alfabeto de la cadena invocante
 			alfabeto = intento.compareTo(contraseña);
+			
 			// Si es menor a 0, el intento es menor
 			if (alfabeto < 0) {
 				System.out.println("La contraseña introducida es menor alfabeticamente");
@@ -33,11 +35,15 @@ public class Ejer2 {
 			} else if (alfabeto > 0) {
 				System.out.println("La contraseña introducida es mayor alfabeticamente");
 				// Son iguales por lo que imprime ganaste
-			} else {
-				System.out.println("Ganaste!!!");
 			}
+			
+			// Pedimos al jugador 2 la contraseña y la guardamos en la variable
+			System.out.println("Jugador 2, intente adivinar la contraseña: ");
+			intento = reader.nextLine();
 		}
 
+		System.out.println("Ganaste!!!");
+		
 		// Cerramos el Scanner
 		reader.close();
 	}
