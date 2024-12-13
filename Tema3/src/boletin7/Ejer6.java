@@ -22,7 +22,7 @@ public class Ejer6 {
 			frase = frase.replace(" ", "");
 		}
 
-		// Quitamos los espacios a la frase
+		// Invertimos la frase
 		for (int i = frase.length() - 1; i >= 0; i--) {
 			invertida += frase.charAt(i);
 		}
