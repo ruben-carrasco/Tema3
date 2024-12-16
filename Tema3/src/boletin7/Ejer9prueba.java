@@ -2,7 +2,7 @@ package boletin7;
 
 import java.util.Scanner;
 
-public class Ejer9 {
+public class Ejer9prueba {
 	public static void main(String[] args) {
 		String frase;
 		String fraseTraducida;
