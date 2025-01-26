@@ -19,9 +19,9 @@ public class Ejer8 {
 		String usuLog;
 		// Variable que almacena el pass de logeo
 		String passLog;
-		// S
+		// Booleano para saber si se introduce bien usu y pass
 		boolean exito;
-		//
+		// contador de errores
 		int contador;
 
 		// Creamos el Scanner
@@ -37,19 +37,19 @@ public class Ejer8 {
 			// Pedimos al usuario que elija una opción
 			System.out.print("Elija una opción: ");
 			opcion = reader.nextInt();
-			
+
 			// Limpieamos Buffer
 			reader.nextLine();
-			
+
 			System.out.println();
-			
+
 			// Switch para las diferentes opciones
 			switch (opcion) {
 			case 1 -> {
 				// Pedimos al usu que introduzca su usuario
 				System.out.print("Introduzca un usuario: ");
 				usu = reader.nextLine();
-				
+
 				// Pedimos al usu que introduzca una contrasena
 				System.out.print("Introduzca password para completar el registro: ");
 				pass = reader.nextLine();
@@ -58,27 +58,34 @@ public class Ejer8 {
 				detallesLog.put(usu, pass);
 			}
 			case 2 -> {
+				// Inicializamos variables
 				contador = 0;
 				exito = false;
+				
+				// Sale si hay exito o si el contador es < 3
 				while (contador < 3 && !exito) {
-				// Pedimos al usurio que introduzca el usuario de login
-				System.out.print("Usuario: ");
-				usuLog = reader.nextLine();
+					// Pedimos al usurio que introduzca el usuario de login
+					System.out.print("Usuario: ");
+					usuLog = reader.nextLine();
+
+					// Pedimos al usurio que introduzca al contrasena de login
+					System.out.print("Contrasena: ");
+					passLog = reader.nextLine();
+
+					// Si la combinacion es errorea aumenta el contador
+					if (!detallesLog.replace(usuLog, passLog, passLog))
+						contador++;
+
+					// Se almacena en exito el booleano resultante
+					exito = detallesLog.replace(usuLog, passLog, passLog);
+				}
 				
-				// Pedimos al usurio que introduzca al contrasena de login
-				System.out.print("Contrasena: ");
-				passLog = reader.nextLine();
-				
-				if (!detallesLog.replace(usuLog, passLog, passLog)) contador++;
-				
-				exito = detallesLog.replace(usuLog, passLog, passLog);}
-				
+				// Si hay exito se muestra un mensaje, si no el otro
 				if (exito) {
 					System.out.println("Ha accedido al área restringida");
 				} else {
 					System.out.println("Lo siento, no tiene acceso al área restringida");
 				}
-				
 
 			}
 			default -> {
@@ -87,7 +94,7 @@ public class Ejer8 {
 			}
 			}
 		}
-		
+
 		System.out.println("Saliste");
 
 		// Cerramos Scanner
