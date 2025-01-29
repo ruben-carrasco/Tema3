@@ -120,12 +120,15 @@ public class Ejer6 {
 		}
 	}
 	
-	// Funcion para añadir telefono
+	// Funcion para eliminar telefono
 	public static boolean eliminarTelefono (HashMap<String, HashSet<Integer>> mapa,String nombre, int telefono) {
 		boolean eliminado;
 		HashSet<Integer> telefonos = new HashSet<>();
+		// Obtenemos el valor de la clave que es un conjunto
 		telefonos = mapa.get(nombre);
+		// Eliminamos y almacenamos el booleano resultante
 		eliminado = telefonos.remove(telefono);
+		// Devuelve truesi se realiza el remove correctamente
 		return eliminado;
 	}
 
