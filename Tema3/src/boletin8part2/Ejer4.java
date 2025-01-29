@@ -56,6 +56,7 @@ public class Ejer4 {
 			// Pedimos al usuario que introduzca una opcion y lo almacenamos en la variable
 			System.out.println("Introduzca una opcion: ");
 			option = reader.nextInt();
+			reader.nextLine();
 		}
 		
 		// Cerrar el Scanner
@@ -68,7 +69,8 @@ public class Ejer4 {
 		System.out.println("1. Añadir nuevo nombre a la lista.");
 		System.out.println("2. Elimina un nombre específico.");
 		System.out.println("3. Ordena la lista alfabéticamente.");
-		System.out.println("4. Busca si un nombre específico está en la lista.");				System.out.println("5. Salir.");		
+		System.out.println("4. Busca si un nombre específico está en la lista.");	
+		System.out.println("5. Salir.");		
 	}
 	
 	// Funcion que añade nombre
